@@ -1,0 +1,47 @@
+﻿@model namespace BugTracker.Models.SelectedCategory
+@{
+    ViewBag.Title = "AddorEdit";
+}
+
+<h2>Select category</h2>
+
+@using (Html.BeginForm())
+{
+
+    <div class="form-horizontal">
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            <label>Select Category</label>
+            @*Normal Dropdown*@
+            @*Html.DropDownListFor(model => model.SelectedCategoryIDs, new SelectList(model.CategoryController,"CategoryID", "Category"), new { id = "normalDropDown" })*@
+
+            @*MultiSelect DropDown*@
+            @Html.ListBoxFor(model => model.SelectedIDArray, new MultiSelectList(Model.CategoryCollection, "CategoryID", "CategoryName"), new { id = "multiSelectDropDown", multiple = "multiple" })
+            )
+            <input type="submit" name=" category" value=" Submit" />
+
+        </div>
+
+    </div>
+
+}
+
+@section scripts{
+
+    <script>
+        $(function () {
+            //normal dropdown
+            //$("#normalDropBown").chosen({
+            //    disable_search_threshold : 5
+            //});
+
+            //multiselect Dropdown
+            $("#multiSelectDropDown").chosen();
+                width : "100%"
+
+        });
+
+    </script>
+}
+

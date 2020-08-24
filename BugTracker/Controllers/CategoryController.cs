@@ -10,7 +10,7 @@ namespace BugTracker.Controllers
 {
     public class CategoryController : Controller
     {
-        public ActionResult AddorEdit(int id = 0)
+        public ActionResult AddorEdit(int id = 0) 
         {
             SelectedCategory emp = new SelectedCategory();
             using (BugDBEntities db = new BugDBEntities())

@@ -73,5 +73,6 @@ namespace BugTracker.Controllers
                 return Json(new { success = true, message = "Deleted Successfully" }, JsonRequestBehavior.AllowGet);
             }
         }
+
     }
 }

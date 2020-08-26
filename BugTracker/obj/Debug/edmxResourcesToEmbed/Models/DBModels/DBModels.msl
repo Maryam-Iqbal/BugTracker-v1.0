@@ -6,10 +6,27 @@
         <MappingFragment StoreEntitySet="Ticket">
           <ScalarProperty Name="TicketID" ColumnName="TicketID" />
           <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
           <ScalarProperty Name="User" ColumnName="User" />
           <ScalarProperty Name="Priority" ColumnName="Priority" />
           <ScalarProperty Name="Assign" ColumnName="Assign" />
           <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="BugDBModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+          <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SelectedCategories">
+      <EntityTypeMapping TypeName="BugDBModel.SelectedCategory">
+        <MappingFragment StoreEntitySet="SelectedCategory">
+          <ScalarProperty Name="SelectedCategoryIDs" ColumnName="SelectedCategoryIDs" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

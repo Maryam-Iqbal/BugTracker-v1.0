@@ -13,10 +13,10 @@ namespace BugTracker.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BugDBEntities : DbContext
+    public partial class MyDatabaseEntities : DbContext
     {
-        public BugDBEntities()
-            : base("name=BugDBEntities")
+        public MyDatabaseEntities()
+            : base("name=MyDatabaseEntities")
         {
         }
     
@@ -25,6 +25,6 @@ namespace BugTracker.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Ticket> Tickets { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
     }
 }

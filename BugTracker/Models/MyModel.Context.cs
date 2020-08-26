@@ -20,11 +20,11 @@ namespace BugTracker
         {
         }
     
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            throw new UnintentionalCodeFirstException();
-        }
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+       // {
+       //     throw new UnintentionalCodeFirstException();
+      //  }
     
-        public virtual DbSet<Category> Categories { get; set; }
+     //   public virtual DbSet<Category> Categories { get; set; }
     }
 }

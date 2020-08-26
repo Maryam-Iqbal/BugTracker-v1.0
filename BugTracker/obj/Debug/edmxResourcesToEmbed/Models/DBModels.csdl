@@ -5,30 +5,13 @@
       <PropertyRef Name="TicketID" />
     </Key>
     <Property Name="TicketID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Category" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="User" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Priority" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Assign" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="User" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Priority" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Assign" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityContainer Name="BugDBEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Tickets" EntityType="Self.Ticket" />
-    <EntitySet Name="Categories" EntityType="BugDBModel.Category" />
-    <EntitySet Name="SelectedCategories" EntityType="BugDBModel.SelectedCategory" />
   </EntityContainer>
-  <EntityType Name="Category">
-    <Key>
-      <PropertyRef Name="CategoryID" />
-    </Key>
-    <Property Name="CategoryID" Type="Int32" Nullable="false" />
-    <Property Name="CategoryName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="SelectedCategory">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" />
-    <Property Name="SelectedCategoryIDs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-  </EntityType>
 </Schema>

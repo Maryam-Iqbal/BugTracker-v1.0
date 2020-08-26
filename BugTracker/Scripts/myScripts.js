@@ -5,7 +5,7 @@ function LoadCategory(element) {
         //ajax function for fetch data
         $.ajax({
             type: "GET",
-            url: '/home/getProductCategories',
+            url: '/home/getCategoryCategories',
             success: function (data) {
                 Categories = data;
                 //render catagory
@@ -14,7 +14,7 @@ function LoadCategory(element) {
         })
     }
     else {
-        //render catagory to the element
+        //render category to the element
         renderCategory(element);
     }
 }
@@ -24,19 +24,20 @@ function renderCategory(element) {
     $ele.empty();
     $ele.append($('<option/>').val('0').text('Select'));
     $.each(Categories, function (i, val) {
-        $ele.append($('<option/>').val(val.CategoryID).text(val.CategortyName));
+        $ele.append($('<option/>').val(val.CategoryID).text(val.CategoryName));
     })
 }
 
+
 //fetch products
-function LoadProduct(categoryDD) {
+function LoadCategory(categoryDD) {
     $.ajax({
         type: "GET",
         url: "/home/getProducts",
         data: { 'categoryID': $(categoryDD).val() },
         success: function (data) {
-            //render products to appropriate dropdown
-            renderProduct($(categoryDD).parents('.mycontainer').find('select.product'), data);
+            //render categories to appropriate dropdown
+            renderCategory($(categoryDD).parents('.mycontainer').find('select.product'), data);
         },
         error: function (error) {
             console.log(error);
@@ -44,13 +45,13 @@ function LoadProduct(categoryDD) {
     })
 }
 
-function renderProduct(element, data) {
-    //render product
+function renderCategory(element, data) {
+    //render category
     var $ele = $(element);
     $ele.empty();
     $ele.append($('<option/>').val('0').text('Select'));
     $.each(data, function (i, val) {
-        $ele.append($('<option/>').val(val.ProductID).text(val.ProductName));
+        $ele.append($('<option/>').val(val.ID).text(val.ProductName));
     })
 }
 

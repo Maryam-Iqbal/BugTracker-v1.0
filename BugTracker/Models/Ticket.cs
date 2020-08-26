@@ -16,7 +16,6 @@ namespace BugTracker.Models
     {
         public int TicketID { get; set; }
         public string Title { get; set; }
-        public string Category { get; set; }
         public string User { get; set; }
         public string Priority { get; set; }
         public string Assign { get; set; }
